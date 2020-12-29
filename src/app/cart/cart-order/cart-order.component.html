@@ -1,0 +1,10 @@
+<div class="card fixed-bottom">
+  <div class="card-body">
+    <div class="clearfix">
+      <p class="float-left font-weight-bold">Subtotal</p>
+      <p class="float-right">€{{ calculateTotal() }}</p>
+    </div>
+    <hr>
+    <a (click)="onPlaceOrder()" class="btn btn-dark float-right">Place order</a>
+  </div>
+</div>

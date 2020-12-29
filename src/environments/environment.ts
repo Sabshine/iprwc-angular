@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'http://127.0.0.1:3000',
+  minimumPasswordLength: 8,
+  minimumUsernameLength: 4,
+  maximumUsernameLength: 64
 };
 
 /*

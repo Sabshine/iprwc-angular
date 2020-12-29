@@ -1,0 +1,11 @@
+.clickable{
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.clickable:hover, .active:active {
+  cursor: pointer;
+  color: #ffc107;
+  text-decoration: none;
+}

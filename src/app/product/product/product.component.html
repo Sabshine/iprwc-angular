@@ -1,0 +1,24 @@
+<div 
+  class="card shadow-sm d-flex my-2" 
+  style="width: 17.1rem; margin: 5px;">
+  <img 
+    [src]="product.productUrl" 
+    class="card-img-top clickable" 
+    alt="product.productName"
+    (click)="onCardClick(product.productId)">
+  <div>
+    <div class="card-body">
+      <h6 class="card-title">{{product.productName}}</h6>
+      <p class="card-subtitle mb-2 text-muted">€{{product.productPrice}}</p>
+      <div *ngIf="isUserAdmin" class="button-box col-lg-12">
+        <button 
+          class="btn btn-primary"
+          (click)="onEdit(product.productId)">Edit</button>
+        <button 
+          style="margin: 5px;" 
+          class="btn btn-primary"
+          (click)="onDelete(product.productId)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+form, label {
+  width: 100%;
+}
+
+img {
+  text-overflow: ellipsis;
+
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.invalid-error{
+  margin-top: -10px;
+  color: red;
+  font-size: 14px;
+}

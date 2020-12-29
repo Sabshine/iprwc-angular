@@ -1,0 +1,29 @@
+<div *ngIf="cartItem" class="row bg-white border-bottom shadow-sm rounded align-items-center my-2">
+  <div class="col-2">
+    <img class="img-fluid float-left square-img" *ngIf="cartItem.product.productUrl" src="{{ cartItem.product.productUrl }}" alt="{{ cartItem.product.productName }} image">
+  </div>
+  <div [className]="editable ? 'col-3' : 'col-5'">
+    <span>{{ cartItem.product.productName }}</span>
+  </div>
+  <div class="col-4" *ngIf="editable">
+    <input
+      style="width: 70%;"
+      class="form-controls"
+      type="number"
+      min="0"
+      name="amount"
+      [valueAsNumber]
+      (change)="updateAmount($event)"
+      required
+      [(ngModel)]="amount"
+    />
+  </div>
+  <div class="col-4" *ngIf="!editable">
+    <span class="float-right">price: &euro;{{cartItem.product.productPrice}}</span>
+    <span class="float-left">amount: {{ amount }}</span>
+  </div>
+  <div class="col-3 float-right" *ngIf="editable">
+    <span>&euro; {{ cartItem.product.productPrice * amount }} </span>
+    <button class="close" (click)="onRemove()">&#10005;</button>
+  </div>
+</div>

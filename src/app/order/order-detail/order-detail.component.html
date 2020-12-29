@@ -1,0 +1,23 @@
+<p></p>
+<div class="container" *ngIf="order">
+  <h1 class="text-center">The product {{isAdmin? '' : 'you'}} ordered</h1>
+  <div class="row justify-content-center">
+    <div class="col-8 col-lg-6">
+      <div class="card bg-lightgrey border-secondary rounded my-2">
+        <div class="card-body clearfix">
+          <span class="text-white float-left">{{isAdmin ? 'Order status:' : 'Your order status:'}}  {{ order.orderStatus }}</span>
+          <span class="float-right font-weight-bold">Order total: &euro; {{ calculateTotal() }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-8">
+    </div>
+    <div class="col-12 col-lg-8" *ngFor="let cartItem of order.productOrders;">
+        <app-cart-item
+          [class]="'order-items'"
+          [cartItem]="cartItem"
+          [editable]="false">
+        </app-cart-item>
+    </div>
+  </div>
+</div>

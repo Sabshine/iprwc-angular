@@ -1,0 +1,30 @@
+.parallax {
+  margin-top: -10px;
+  background-image: url('https://www.netflix-nederland.nl/wp-content/uploads/2020/02/JoJos-Bizarre-Adventure-Netflix.jpg');
+
+  /* Full height */
+  height: 70%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#header{
+  position: absolute;
+  z-index: 1000;
+  /* top: 200px;
+  left: 0;
+  right: 0; */
+  top: 50%;
+  left: 50%;
+  margin-top: -110px; /* Half the height */
+  margin-left: -200px; /* Half the width */
+}
+
+.resize{
+  width: 400px;
+  height: auto;
+}

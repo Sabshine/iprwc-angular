@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-dark pt-2">
+  <a class="navbar-brand text-white font-weight-bold">JoJo</a>
+  
+  <!-- if user -->
+  <ul class="nav navbar-nav text-white px-2" *ngIf="!isUserAdmin">
+    <li routerLinkActive="active"><a class="clickable" (click)="goToHome()">Products</a></li>
+  </ul>
+  <!-- if admin -->
+  <ul class="nav navbar-nav text-white px-2" *ngIf="isUserAdmin">
+    <li routerLinkActive="active"><a class="clickable" (click)="goToHome()">Manage Products</a></li>
+  </ul>
+  <ul class="nav navbar-nav text-white px-2" *ngIf="isUserAdmin">
+    <li routerLinkActive="active"><a class="clickable" (click)="goToAddProducts()">Add Products</a></li>
+  </ul>
+
+
+  <ul class="nav navbar-nav text-white px-2">
+    <li routerLinkActive="active"><a class="clickable" (click)="goToCart()">Cart({{cartItems.length ? cartItems.length : 0}})</a></li>
+  </ul>
+
+  <!-- if user NOT logged in -->
+  <ul class="nav navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <button 
+      class="btn btn-outline-warning mr-2"
+      (click)="onLogin()">login</button>
+  </ul>
+
+  <!-- if user logged in -->
+  <ul class="nav navbar-nav ml-auto" *ngIf="isLoggedIn">
+    <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown" display="dynamic" placement="bottom-right">
+      <button class="btn btn-outline-warning mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">
+        account
+      </button>
+      <!-- order button checks reroute within the function -->
+      <div ngbDropdownMenu aria-labelledby="dropdownManual">
+        <button 
+          ngbDropdownItem
+          (click)="onOrders()">{{isUserAdmin ? 'All Orders' : 'My Orders'}}</button>
+        <button 
+          ngbDropdownItem 
+          (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </ul>
+
+</nav>

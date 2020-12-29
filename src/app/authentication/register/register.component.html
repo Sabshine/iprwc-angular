@@ -1,0 +1,195 @@
+<div class="container">
+  <div class="row min-vh-100 justify-content-center mt-5">
+    <div class="col-md-5 col-md-5 mt-5">
+      <div class="card">
+        <article class="card-body">
+        <a href="" class="float-right btn btn-outline-primary" routerLink="/login">Sign in</a>
+        <h4 class="card-title mb-4 mt-1">Sign up</h4>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="formgroup">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Email"
+              formControlName="email"
+              [ngClass]="validClasses('email')"
+            >
+            <div
+              *ngIf="registerForm.controls.email.hasError('in_use')"
+              class="invalid-feedback"
+            >
+              Email is already in use. Please choose a different email
+            </div>
+            <div
+              *ngIf="registerForm.controls.email.hasError('pattern')"
+              class="invalid-feedback"
+            >
+              Email not valid
+            </div>
+          </div>
+          <p></p>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              [ngClass]="validClasses('password')"
+              id="password"
+              placeholder="******"
+              formControlName="password"
+            >
+            <div
+              *ngIf="registerForm.controls.password.hasError('minlength')"
+              class="invalid-feedback"
+            >
+              The password should be the minum length of {{ minPasswordLength }} characters
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Repeat Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="passwordCheck"
+              placeholder="******"
+              formControlName="passwordCheck"
+              [ngClass]="validClasses('passwordCheck')"
+            >
+            <div
+              *ngIf="registerForm.controls.passwordCheck.hasError('equalValue')"
+              class="invalid-feedback"
+            >
+              Passwords don't match
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="firstname">Firstname</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstname"
+                  placeholder="Firstname"
+                  formControlName="firstname"
+                  [ngClass]="validClasses('firstname')"
+                >
+                <div
+                  *ngIf="registerForm.controls.email.hasError('required')"
+                  class="invalid-feedback"
+                >
+                  Please enter a valid firstname
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="lastname">Lastname</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastname"
+                  placeholder="Lastname"
+                  formControlName="lastname"
+                  [ngClass]="validClasses('lastname')"
+                >
+                <div
+                  *ngIf="registerForm.controls.email.hasError('required')"
+                  class="invalid-feedback"
+                >
+                  Please enter a valid lastname
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="firstname">Street</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="street"
+                  placeholder="Street"
+                  formControlName="street"
+                  [ngClass]="validClasses('street')"
+                >
+                <div
+                  *ngIf="registerForm.controls.email.hasError('required')"
+                  class="invalid-feedback"
+                >
+                  Please enter a valid street
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="lastname">Housenumber</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="housenumber"
+                  placeholder="Housenumber"
+                  formControlName="housenumber"
+                  [ngClass]="validClasses('housenumber')"
+                >
+                <div
+                  *ngIf="registerForm.controls.email.hasError('required')"
+                  class="invalid-feedback"
+                >
+                  Please enter a valid housenumber
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="postalcode">Postalcode</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="postalcode"
+                  placeholder="Postalcode"
+                  formControlName="postalcode"
+                  [ngClass]="validClasses('postalcode')"
+                >
+                <div
+                  *ngIf="registerForm.controls.email.hasError('required')"
+                  class="invalid-feedback"
+                >
+                  Please enter a valid postalcode
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="country">country</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="country"
+                  placeholder="Country"
+                  formControlName="country"
+                  [ngClass]="validClasses('country')"
+                >
+                <div
+                  *ngIf="registerForm.controls.email.hasError('required')"
+                  class="invalid-feedback"
+                >
+                  Please enter a valid country
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-primary align-content-center" [disabled]="!registerForm.valid">Register</button>
+          </div>
+        </form>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</div>
+

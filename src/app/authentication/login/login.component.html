@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row min-vh-100 justify-content-center align-items-center">
+    <div class="col-sm-12 col-md-5">
+      <div class="card">
+        <article class="card-body">
+        <a href="" class="float-right btn btn-outline-primary" routerLink="/register">Sign up</a>
+        <h4 class="card-title mb-4 mt-1">Sign in</h4>
+        <form #form="ngForm" (ngSubmit)="onLogin()" ngForm class="form-controls">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email"
+                   class="form-control"
+                   id="email"
+                   placeholder="Email"
+                   required
+                   ngModel
+                   name="email"
+                   [ngClass]="{'is-valid': email.valid}"
+                   #email="ngModel">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="******"
+              required
+              password
+              name="password"
+              ngModel
+              #password="ngModel">
+          </div>
+          <div *ngIf="errorMessage" class="invalid-error">
+            User not found
+          </div>
+          <div class="col-md-12 text-center">
+            <button [disabled]="!form.valid" type="submit" class="btn btn-primary align-content-center">Login</button>
+          </div>
+        </form>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
