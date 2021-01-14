@@ -102,7 +102,7 @@ export class RegisterComponent implements OnInit {
           window.location.reload();
         });
       }, error => {
-        alert('Something went wrong, try again later')
+        alert('Something went wrong, please try again later')
       });
   }
 

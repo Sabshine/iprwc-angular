@@ -35,7 +35,6 @@ export class ProductService {
   }
 
   deleteProduct(productId: number): Observable<any> {
-    console.log('products/' + productId)
     return this.httpClient.delete(
       'products/' + productId
     );

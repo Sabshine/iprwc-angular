@@ -18,10 +18,9 @@ export class NavigationBarComponent implements OnInit {
   constructor(private router: Router, private cartService: CartService, private authService: AuthService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe( paramMap => {
-      console.log(paramMap.get('home'))
-  })
-
+  //   this.activatedRoute.paramMap.subscribe( paramMap => {
+  //     console.log(paramMap.get('home'))
+  // })
     this.authService.isLoggedInSubject.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
     });
