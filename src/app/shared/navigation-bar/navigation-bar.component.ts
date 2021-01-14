@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { CartService } from 'src/app/cart/cart.service';
 import { AuthService } from '../../authentication/auth.service';
@@ -15,9 +15,13 @@ export class NavigationBarComponent implements OnInit {
   isUserAdmin: boolean | undefined
   cartItems: ProductAmountModel[] | undefined
 
-  constructor(private router: Router, private cartService: CartService, private authService: AuthService) { }
+  constructor(private router: Router, private cartService: CartService, private authService: AuthService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe( paramMap => {
+      console.log(paramMap.get('home'))
+  })
+
     this.authService.isLoggedInSubject.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
     });

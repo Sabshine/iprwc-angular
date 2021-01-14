@@ -5,9 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'http://127.0.0.1:3000',
-  minimumPasswordLength: 8,
-  minimumUsernameLength: 4,
-  maximumUsernameLength: 64
+  minimumPasswordLength: 8
 };
 
 /*
