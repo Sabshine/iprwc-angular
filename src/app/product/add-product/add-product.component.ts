@@ -34,7 +34,7 @@ export class AddProductComponent implements OnInit {
       }).subscribe((response) => {
         alert('Product added. You will be redirect in a couple of seconds')
         setTimeout(() => {
-          this.router.navigate(['', 'products', 'manage'])
+          this.router.navigate(['', 'home'])
         }, 3000)
       }, (error) => {
         alert('Failed to add product. Please try again later!')

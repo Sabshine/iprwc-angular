@@ -46,7 +46,7 @@ export class EditProductComponent implements OnInit {
       }).subscribe((response) => {
         alert('Edited existing product. You will be redirected to the manage page')
         setTimeout(() => {
-          this.router.navigate(['', 'products', 'manage'])
+          this.router.navigate(['', 'home'])
         }, 3000)
       }, (error) => {
         alert('Failed to add product. Please try again later!')
