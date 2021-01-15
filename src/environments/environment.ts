@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://127.0.0.1:3000',
+  // baseUrl: 'http://127.0.0.1:3000', //Local
+  baseUrl: 'https://iprwc-node-api.herokuapp.com', //dev
   minimumPasswordLength: 8
 };
 
