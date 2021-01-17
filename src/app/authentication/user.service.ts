@@ -16,6 +16,9 @@ export class UserService{
     return this.httpClient.get(
       'user/id/' + email
     ).pipe(tap((response: any) => {
+      if(!response.content) {
+        return;
+      }
       localStorage.setItem('userId', response.content.id);
     }));
   }
