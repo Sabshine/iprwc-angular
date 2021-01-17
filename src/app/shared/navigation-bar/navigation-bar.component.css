@@ -1,4 +1,4 @@
-.clickable{
+.clickable:not(.active){
   cursor: pointer;
   color: white;
   text-decoration: none;
@@ -8,4 +8,8 @@
   cursor: pointer;
   color: #ffc107;
   text-decoration: none;
+}
+
+.highlighted {
+  color: #ffc107 !important;
 }

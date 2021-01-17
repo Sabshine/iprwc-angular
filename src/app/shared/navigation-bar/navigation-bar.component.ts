@@ -11,6 +11,7 @@ import { ProductAmountModel } from '../models/product-amount.model';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
+  currentPage: string = 'home'
   isLoggedIn: boolean | undefined
   isUserAdmin: boolean | undefined
   cartItems: ProductAmountModel[] | undefined
@@ -32,11 +33,13 @@ export class NavigationBarComponent implements OnInit {
   }
 
   onLogin() {
+    this.currentPage = 'login'
     this.router.navigate(['/login']);
   }
 
   onLogout() {
     // localStorage.removeItem('expirationDate');
+    this.currentPage = 'logout'
     window.localStorage.clear()
     this.router.navigate(['/home']).then(() => {
       window.location.reload();
@@ -46,22 +49,26 @@ export class NavigationBarComponent implements OnInit {
   onOrders() {
     this.isUserAdmin = this.authService.isAdmin()
     if (this.isUserAdmin){
+      this.currentPage = 'all-orders'
       this.router.navigate(['/all'])
     } else {
+      this.currentPage = 'orders'
       this.router.navigate(['/orders'])
     }
   }
 
   goToAddProducts(){
+    this.currentPage = 'product'
     this.router.navigate(['/products/add'])
   }
 
   goToHome() {
+    this.currentPage = 'home'
     this.router.navigate(['/home'])
   }
 
-
   goToCart() {
+    this.currentPage = 'cart'
     this.router.navigate(['/cartitems'])
   }
 
