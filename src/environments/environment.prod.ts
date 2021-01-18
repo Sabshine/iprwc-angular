@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://iprwc-node-api.herokuapp.com',
+  baseUrl: '',
   minimumPasswordLength: 8
 };
