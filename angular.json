@@ -65,7 +65,7 @@
           "options": {
             "browserTarget": "iprwc-angular:build",
             "host": "iprwc-angular-jnqn4.ondigitalocean.app",
-            "port": 4200
+            "port": 8080
           },
           "configurations": {
             "production": {
