@@ -64,7 +64,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "iprwc-angular:build",
-            "host": "https://iprwc-angular-jnqn4.ondigitalocean.app"
+            "host": "https://iprwc-angular-jnqn4.ondigitalocean.app/iprwc-angular2"
           },
           "configurations": {
             "production": {
