@@ -63,7 +63,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "iprwc-angular:build"
+            "browserTarget": "iprwc-angular:build",
+            "host": "167.99.210.112",
+            "port": 2400
           },
           "configurations": {
             "production": {
