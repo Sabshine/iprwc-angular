@@ -3,19 +3,19 @@
   
   <!-- if user -->
   <ul class="nav navbar-nav text-white px-2" *ngIf="!isUserAdmin">
-    <li routerLinkActive="active"><a class="clickable" (click)="goToHome()">Products</a></li>
+    <li routerLinkActive="active"><a class="clickable" [ngClass]="{highlighted: currentPage === 'home'}" (click)="goToHome()">Products</a></li>
   </ul>
   <!-- if admin -->
   <ul class="nav navbar-nav text-white px-2" *ngIf="isUserAdmin">
-    <li routerLinkActive="active"><a class="clickable" (click)="goToHome()">Manage Products</a></li>
+    <li routerLinkActive="active"><a class="clickable" [ngClass]="{highlighted: currentPage === 'home'}" (click)="goToHome()">Manage Products</a></li>
   </ul>
   <ul class="nav navbar-nav text-white px-2" *ngIf="isUserAdmin">
-    <li routerLinkActive="active"><a class="clickable" (click)="goToAddProducts()">Add Products</a></li>
+    <li routerLinkActive="active"><a class="clickable" [ngClass]="{highlighted: currentPage === 'product'}" (click)="goToAddProducts()">Add Products</a></li>
   </ul>
 
 
   <ul class="nav navbar-nav text-white px-2">
-    <li routerLinkActive="active"><a class="clickable" (click)="goToCart()">Cart({{cartItems.length ? cartItems.length : 0}})</a></li>
+    <li routerLinkActive="active"><a class="clickable" [ngClass]="{highlighted: currentPage === 'cart'}" (click)="goToCart()">Cart({{cartItems.length ? cartItems.length : 0}})</a></li>
   </ul>
 
   <!-- if user NOT logged in -->

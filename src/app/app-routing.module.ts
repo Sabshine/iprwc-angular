@@ -14,6 +14,11 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
+  },
+  {
+    path: '**', // redirects any route that is unknown back to /home
+    redirectTo: '/home',
+    pathMatch: 'full'
   }
 ];
 
