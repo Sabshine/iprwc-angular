@@ -32,10 +32,7 @@ export class AddProductComponent implements OnInit {
         productUrl: String(this.productForm.value.image),
         isActive: undefined
       }).subscribe((response) => {
-        alert('Product added. You will be redirect in a couple of seconds')
-        setTimeout(() => {
-          this.router.navigate(['', 'home'])
-        }, 3000)
+        alert('Product succesfully added')
       }, (error) => {
         alert('Failed to add product. Please try again later!')
       })
