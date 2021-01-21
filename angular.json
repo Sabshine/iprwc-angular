@@ -65,7 +65,10 @@
           "options": {
             "browserTarget": "iprwc-angular:build",
             "host": "167.99.210.112",
-            "port": 4200
+            "port": 4200,
+            "ssl": true,
+            "sslKey": "",
+            "sslCert": ""
           },
           "configurations": {
             "production": {
