@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ProductAmountModel } from "../shared/models/product-amount.model";
+import { OrderItemModel } from '../shared/models/order-item.model'
 import {BehaviorSubject} from "rxjs";
 
 @Injectable({
@@ -9,10 +9,10 @@ export class CartService {
   public cartSubject = new BehaviorSubject(this.getShoppingCartItems());
   constructor() { }
 
-  getShoppingCartItems(): ProductAmountModel[] {
+  getShoppingCartItems(): OrderItemModel[] {
     try {
       const cartItems = localStorage.getItem('shoppingCartItems')
-      const items = JSON.parse(<string>cartItems) as ProductAmountModel[];
+      const items = JSON.parse(<string>cartItems) as OrderItemModel[];
       if (items === null) {
         return []
       }
@@ -23,7 +23,7 @@ export class CartService {
     }
   }
 
-  addProductToShoppingCart(item: ProductAmountModel): boolean {
+  addProductToShoppingCart(item: OrderItemModel): boolean {
     try {
       // add to existing products
       let currentShoppingItems = this.getShoppingCartItems();
@@ -45,7 +45,7 @@ export class CartService {
     }
   }
 
-  setCartItems(items: ProductAmountModel[]) {
+  setCartItems(items: OrderItemModel[]) {
     localStorage.setItem('shoppingCartItems', JSON.stringify(items));
     this.cartSubject.next(items)
   }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit} from '@angular/core';
-import { ProductAmountModel } from "../../shared/models/product-amount.model";
+import { OrderItemModel } from "../../shared/models/order-item.model";
 import { OrderCartUtil } from "../../shared/cart-order.util";
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cart-order.component.css']
 })
 export class CartOrderComponent implements OnInit {
-  @Input() cartItems: ProductAmountModel[] | undefined
+  @Input() cartItems: OrderItemModel[] | undefined
   constructor(private router: Router) { }
 
   ngOnInit(): void {

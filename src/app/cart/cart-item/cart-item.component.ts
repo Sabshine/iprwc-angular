@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import { ProductAmountModel } from "../../shared/models/product-amount.model";
+import { OrderItemModel } from "../../shared/models/order-item.model";
 
 @Component({
   selector: 'app-cart-item',
@@ -9,9 +9,9 @@ import { ProductAmountModel } from "../../shared/models/product-amount.model";
 export class CartItemComponent implements OnInit {
   amount = 1
   @Input() editable = true
-  @Input() cartItem: ProductAmountModel | undefined | any
-  @Output() updated: EventEmitter<ProductAmountModel> = new EventEmitter();
-  @Output() removed: EventEmitter<ProductAmountModel> = new EventEmitter();
+  @Input() cartItem: OrderItemModel | undefined | any
+  @Output() updated: EventEmitter<OrderItemModel> = new EventEmitter();
+  @Output() removed: EventEmitter<OrderItemModel> = new EventEmitter();
 
 
   constructor() { }

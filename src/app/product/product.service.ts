@@ -20,7 +20,7 @@ export class ProductService {
     );
   }
 
-  // Voor de volgende funties moet je admin zijn
+  // For the next functions you need to be an admin
   addProduct(product :ProductModel): Observable<any> {
     return this.httpClient.post(
       'products',

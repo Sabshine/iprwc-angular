@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { CartService } from 'src/app/cart/cart.service';
 import { AuthService } from '../../authentication/auth.service';
-import { ProductAmountModel } from '../models/product-amount.model';
+import { OrderItemModel } from '../models/order-item.model';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -14,7 +14,7 @@ export class NavigationBarComponent implements OnInit {
   currentPage: string = 'home'
   isLoggedIn: boolean | undefined
   isUserAdmin: boolean | undefined
-  cartItems: ProductAmountModel[] | undefined
+  cartItems: OrderItemModel[] | undefined
 
   constructor(private router: Router, private cartService: CartService, private authService: AuthService, private activatedRoute: ActivatedRoute) { }
 
